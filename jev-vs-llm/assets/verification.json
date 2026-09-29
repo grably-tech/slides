@@ -1,0 +1,53 @@
+{
+  "requests": 3279,
+  "retained": 3279,
+  "successful": 3275,
+  "attempts": 3330,
+  "failedApiCalls": [
+    {
+      "id": "speed-r1-deepseek-q1-c4:deepseek:contract-606:nda_15",
+      "status": 503,
+      "batch": "speed-r1-deepseek-q1-c4"
+    },
+    {
+      "id": "speed-r1-deepseek-q1-c4:deepseek:contract-606:nda_3",
+      "status": 503,
+      "batch": "speed-r1-deepseek-q1-c4-repeat1"
+    },
+    {
+      "id": "speed-r1-deepseek-q1-c16:deepseek:contract-606:nda_12",
+      "status": 503,
+      "batch": "speed-r1-deepseek-q1-c16"
+    },
+    {
+      "id": "speed-r1-deepseek-q1-c16:deepseek:contract-606:nda_7",
+      "status": 503,
+      "batch": "speed-r1-deepseek-q1-c16"
+    },
+    {
+      "id": "speed-r2-deepseek-q1-c4:deepseek:contract-21:nda_18",
+      "status": 503,
+      "batch": "speed-r2-deepseek-q1-c4"
+    }
+  ],
+  "excludedDiagnosticRepeatResponses": 51,
+  "allRetainedSuccessfulResponsesRedecoded": true,
+  "binaryFullVectors": 510,
+  "invalid": [
+    "quality-contract-q17:qwen:contract-57:nda_1+nda_2+nda_3+nda_4+nda_5+nda_7+nda_8+nda_10+nda_11+nda_12+nda_13+nda_15+nda_16+nda_17+nda_18+nda_19+nda_20",
+    "quality-contract-q17:qwen:contract-354:nda_1+nda_2+nda_3+nda_4+nda_5+nda_7+nda_8+nda_10+nda_11+nda_12+nda_13+nda_15+nda_16+nda_17+nda_18+nda_19+nda_20",
+    "quality-contract-q17:qwen:contract-1:nda_1+nda_2+nda_3+nda_4+nda_5+nda_7+nda_8+nda_10+nda_11+nda_12+nda_13+nda_15+nda_16+nda_17+nda_18+nda_19+nda_20",
+    "quality-contract-q17:qwen:contract-40:nda_1+nda_2+nda_3+nda_4+nda_5+nda_7+nda_8+nda_10+nda_11+nda_12+nda_13+nda_15+nda_16+nda_17+nda_18+nda_19+nda_20",
+    "quality-contract-q17:qwen:contract-8:nda_1+nda_2+nda_3+nda_4+nda_5+nda_7+nda_8+nda_10+nda_11+nda_12+nda_13+nda_15+nda_16+nda_17+nda_18+nda_19+nda_20",
+    "quality-contract-q17:qwen:contract-395:nda_1+nda_2+nda_3+nda_4+nda_5+nda_7+nda_8+nda_10+nda_11+nda_12+nda_13+nda_15+nda_16+nda_17+nda_18+nda_19+nda_20",
+    "quality-contract-q17:qwen:contract-52:nda_1+nda_2+nda_3+nda_4+nda_5+nda_7+nda_8+nda_10+nda_11+nda_12+nda_13+nda_15+nda_16+nda_17+nda_18+nda_19+nda_20",
+    "quality-contract-q17:qwen:contract-18:nda_1+nda_2+nda_3+nda_4+nda_5+nda_7+nda_8+nda_10+nda_11+nda_12+nda_13+nda_15+nda_16+nda_17+nda_18+nda_19+nda_20",
+    "quality-contract-q17:qwen:contract-225:nda_1+nda_2+nda_3+nda_4+nda_5+nda_7+nda_8+nda_10+nda_11+nda_12+nda_13+nda_15+nda_16+nda_17+nda_18+nda_19+nda_20",
+    "speed-r0-qwen-q17-c1:qwen:contract-57:nda_1+nda_2+nda_3+nda_4+nda_5+nda_7+nda_8+nda_10+nda_11+nda_12+nda_13+nda_15+nda_16+nda_17+nda_18+nda_19+nda_20",
+    "speed-r1-deepseek-q1-c4:deepseek:contract-606:nda_15",
+    "speed-r1-deepseek-q1-c16:deepseek:contract-606:nda_12",
+    "speed-r1-deepseek-q1-c16:deepseek:contract-606:nda_7",
+    "speed-r2-deepseek-q1-c4:deepseek:contract-21:nda_18"
+  ],
+  "verifiedAt": "2026-09-24T12:33:27.850Z"
+}
