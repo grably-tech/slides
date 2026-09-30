@@ -33,6 +33,20 @@ jobs:
             --exclude='.DS_Store' \
             ./ /tmp/pages-public/
 
+      - name: Generate sitemap
+        env:
+          BASE: https://grably.tech/slides
+        run: |
+          {
+            echo '<?xml version="1.0" encoding="UTF-8"?>'
+            echo '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'
+            (cd /tmp/pages-public && find . -name '*.html' -not -path '*/assets/*' | sort) | while read -r f; do
+              grep -qiE 'name="robots"[^>]*noindex' "/tmp/pages-public/$f" && continue
+              rel="${f#./}"
+              echo "  <url><loc>$BASE/${rel%index.html}</loc></url>"
+            done
+            echo '</urlset>'
+          } > /tmp/pages-public/sitemap.xml
       - uses: actions/configure-pages@v5
 
       - uses: actions/upload-pages-artifact@v3

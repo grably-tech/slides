@@ -498,7 +498,7 @@ Template: `./assets/template-end-back.svg`
 
 Проголосуйте за доклад
 
-слайды: [slides.grably.tech/agentic_dev_conf](https://slides.grably.tech/agentic_dev_conf)
+слайды: [grably.tech/slides/agentic_dev_conf](https://grably.tech/slides/agentic_dev_conf)
 
 канал: [@ai_grably](https://t.me/ai_grably)
 

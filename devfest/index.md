@@ -1,7 +1,7 @@
-[![](./assets/qr.png)](https://slides.grably.tech/devfest/)
+[![](./assets/qr.png)](https://grably.tech/slides/devfest/)
 
 [Презентация  
-со ссылками](https://slides.grably.tech/devfest/)
+со ссылками](https://grably.tech/slides/devfest/)
 
 ### AI-native SDLC. Грабли, на которые почти все наступают
 
@@ -351,7 +351,7 @@ Loose Coupling, High Cohesion
 
 ![](./assets/agent-paradigm-layers-comparison.png)
 
-[Подробнее](https://slides.grably.tech/agent-paradigm-layers.html)
+[Подробнее](https://grably.tech/slides/agent-paradigm-layers.html)
 
 ---
 

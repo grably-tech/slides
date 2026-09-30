@@ -1,5 +1,5 @@
 
-slides.grably.tech/aihardfork
+grably.tech/slides/aihardfork
 
 ![](./assets/slides-qr.png)
 
