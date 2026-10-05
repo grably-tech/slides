@@ -1,0 +1,361 @@
+{
+ "qwen": {
+  "single": {
+   "invalid_calls": "0/510",
+   "rate_limited_429": 17,
+   "macro_f1": 0.7575846282036388,
+   "delta_vs_single": null,
+   "probabilities": {
+    "complete": "510/510",
+    "brier": 0.28734909416639204,
+    "ece": 0.04953438919290012
+   },
+   "latency_ms": {
+    "doc_wall_p50": 4419.175,
+    "doc_wall_p95": 9024.417000000001,
+    "cold_call_p50": 902.8159999999999,
+    "cached_call_p50": 1169.019
+   },
+   "cost_per_doc": {
+    "no_cache": 0.010697623999999998,
+    "with_cache": 0.004262551999999999,
+    "billed": 0.004833565333333332
+   },
+   "logprobs_export": {
+    "complete": 510,
+    "missing": 0,
+    "partial": 0
+   },
+   "completion_tokens_median": 1,
+   "prompt_tokens_median": 2338,
+   "cacheable_share_median": 0.783608195902049
+  },
+  "codes": {
+   "invalid_calls": "16/60",
+   "rate_limited_429": 0,
+   "macro_f1": 0.6032292131440827,
+   "delta_vs_single": {
+    "point": -0.15435541505955608,
+    "ci95": [
+     -0.2219041624956536,
+     -0.08796214971305905
+    ]
+   },
+   "probabilities": {
+    "complete": "748/1020",
+    "brier": 0.37152662100419365,
+    "ece": 0.10342196860729397
+   },
+   "latency_ms": {
+    "call_p50": 1262.728,
+    "call_p95": 1803.133,
+    "call_p50_cache_hit": 1205.556,
+    "call_p50_cache_miss": 1376.729
+   },
+   "cost_per_doc": {
+    "no_cache": 0.001022652,
+    "with_cache": null,
+    "billed": 0.0005782546666666667
+   },
+   "logprobs_export": {
+    "complete": 44,
+    "missing": 16,
+    "partial": 0
+   },
+   "completion_tokens_median": 34,
+   "prompt_tokens_median": 3689
+  },
+  "numbered": {
+   "invalid_calls": "0/60",
+   "rate_limited_429": 0,
+   "macro_f1": 0.8068334326769222,
+   "delta_vs_single": {
+    "point": 0.04924880447328339,
+    "ci95": [
+     0.011969603838287601,
+     0.08720463023934943
+    ]
+   },
+   "probabilities": {
+    "complete": "1020/1020",
+    "brier": 0.22645249017032884,
+    "ece": 0.07257078867565155
+   },
+   "latency_ms": {
+    "call_p50": 2423.944,
+    "call_p95": 4169.7300000000005,
+    "call_p50_cache_hit": 2339.827,
+    "call_p50_cache_miss": 2445.685
+   },
+   "cost_per_doc": {
+    "no_cache": 0.001187792,
+    "with_cache": null,
+    "billed": 0.0009742826666666667
+   },
+   "logprobs_export": {
+    "complete": 60,
+    "missing": 0,
+    "partial": 0
+   },
+   "completion_tokens_median": 110,
+   "prompt_tokens_median": 3674
+  },
+  "schema": {
+   "invalid_calls": "0/60",
+   "rate_limited_429": 0,
+   "macro_f1": 0.7962242316327712,
+   "delta_vs_single": {
+    "point": 0.03863960342913242,
+    "ci95": [
+     -0.00038500110579309244,
+     0.07919170473367199
+    ]
+   },
+   "probabilities": {
+    "complete": "1020/1020",
+    "brier": 0.2393645559141883,
+    "ece": 0.07716950744539564
+   },
+   "latency_ms": {
+    "call_p50": 3256.709,
+    "call_p95": 4846.578,
+    "call_p50_cache_hit": 3271.6349999999998,
+    "call_p50_cache_miss": 3237.013
+   },
+   "cost_per_doc": {
+    "no_cache": 0.0013196653333333332,
+    "with_cache": null,
+    "billed": 0.000972092
+   },
+   "logprobs_export": {
+    "complete": 60,
+    "missing": 0,
+    "partial": 0
+   },
+   "completion_tokens_median": 167,
+   "prompt_tokens_median": 3675
+  },
+  "cache_latency_sequential": {
+   "single_cold": {
+    "n": 20,
+    "cache_hits": 0,
+    "total_p50": 893.3109999999999,
+    "ttfb_p50": 884.0649999999999
+   },
+   "single_warm": {
+    "n": 20,
+    "cache_hits": 11,
+    "total_p50": 706.53,
+    "ttfb_p50": 698.664
+   },
+   "numbered_cold": {
+    "n": 20,
+    "cache_hits": 0,
+    "total_p50": 2747.362,
+    "ttfb_p50": 850.973
+   },
+   "numbered_warm": {
+    "n": 20,
+    "cache_hits": 14,
+    "total_p50": 2484.934,
+    "ttfb_p50": 676.7379999999999
+   }
+  }
+ },
+ "deepseek": {
+  "single": {
+   "invalid_calls": "0/510",
+   "rate_limited_429": 0,
+   "macro_f1": 0.699750894720946,
+   "delta_vs_single": null,
+   "probabilities": {
+    "complete": "510/510",
+    "brier": 0.46332065098415337,
+    "ece": 0.21291203294980632
+   },
+   "latency_ms": {
+    "doc_wall_p50": 2914.965,
+    "doc_wall_p95": 4693.046,
+    "cold_call_p50": 296.596,
+    "cached_call_p50": 478.872
+   },
+   "cost_per_doc": {
+    "no_cache": 0.013213830000000001,
+    "with_cache": 0.001773702,
+    "billed": 0.001773702
+   },
+   "logprobs_export": {
+    "complete": 510,
+    "missing": 0,
+    "partial": 0
+   },
+   "completion_tokens_median": 1,
+   "prompt_tokens_median": 2298,
+   "cacheable_share_median": 0.939203354297694
+  },
+  "codes": {
+   "invalid_calls": "2/60",
+   "rate_limited_429": 0,
+   "macro_f1": 0.7192935338956197,
+   "delta_vs_single": {
+    "point": 0.019542639174673693,
+    "ci95": [
+     -0.02035096210277154,
+     0.061570788908143714
+    ]
+   },
+   "probabilities": {
+    "complete": "986/1020",
+    "brier": 0.35837306747914077,
+    "ece": 0.13584698084765578
+   },
+   "latency_ms": {
+    "call_p50": 278.758,
+    "call_p95": 524.831,
+    "call_p50_cache_hit": 278.758,
+    "call_p50_cache_miss": null
+   },
+   "cost_per_doc": {
+    "no_cache": 0.0012177699999999995,
+    "with_cache": null,
+    "billed": 0.00015529319999999997
+   },
+   "logprobs_export": {
+    "complete": 58,
+    "missing": 2,
+    "partial": 0
+   },
+   "completion_tokens_median": 34,
+   "prompt_tokens_median": 3627
+  },
+  "numbered": {
+   "invalid_calls": "0/60",
+   "rate_limited_429": 0,
+   "macro_f1": 0.7881465979147253,
+   "delta_vs_single": {
+    "point": 0.08839570319377932,
+    "ci95": [
+     0.05016253894417977,
+     0.1321285747848513
+    ]
+   },
+   "probabilities": {
+    "complete": "1020/1020",
+    "brier": 0.27653412192999044,
+    "ece": 0.09851821168723898
+   },
+   "latency_ms": {
+    "call_p50": 410.579,
+    "call_p95": 737.651,
+    "call_p50_cache_hit": 410.579,
+    "call_p50_cache_miss": null
+   },
+   "cost_per_doc": {
+    "no_cache": 0.0012909899999999995,
+    "with_cache": null,
+    "billed": 0.0003696332
+   },
+   "logprobs_export": {
+    "complete": 60,
+    "missing": 0,
+    "partial": 0
+   },
+   "completion_tokens_median": 102,
+   "prompt_tokens_median": 3614
+  },
+  "schema": {
+   "invalid_calls": "0/60",
+   "rate_limited_429": 0,
+   "macro_f1": 0.7803833568480683,
+   "delta_vs_single": {
+    "point": 0.08063246212712227,
+    "ci95": [
+     0.03964631448848188,
+     0.12198270265748168
+    ]
+   },
+   "probabilities": {
+    "complete": "0/1020",
+    "brier": null,
+    "ece": null
+   },
+   "latency_ms": {
+    "call_p50": 534.659,
+    "call_p95": 864.529,
+    "call_p50_cache_hit": 534.659,
+    "call_p50_cache_miss": null
+   },
+   "cost_per_doc": {
+    "no_cache": 0.0013565300000000003,
+    "with_cache": null,
+    "billed": 0.0003605364000000001
+   },
+   "logprobs_export": {
+    "complete": 0,
+    "missing": 53,
+    "partial": 7
+   },
+   "completion_tokens_median": 156,
+   "prompt_tokens_median": 3613
+  },
+  "cache_latency_sequential": {
+   "single_cold": {
+    "n": 20,
+    "cache_hits": 0,
+    "total_p50": 290.794,
+    "ttfb_p50": 256.492
+   },
+   "single_warm": {
+    "n": 20,
+    "cache_hits": 20,
+    "total_p50": 156.332,
+    "ttfb_p50": 117.698
+   },
+   "numbered_cold": {
+    "n": 20,
+    "cache_hits": 0,
+    "total_p50": 434.692,
+    "ttfb_p50": 160.054
+   },
+   "numbered_warm": {
+    "n": 20,
+    "cache_hits": 20,
+    "total_p50": 378.824,
+    "ttfb_p50": 112.205
+   }
+  }
+ },
+ "jev": {
+  "macro_f1": 0.7313169125097114,
+  "qwen_numbered_minus_jev": {
+   "point": 0.07551652016721078,
+   "ci95": [
+    0.036650635529668185,
+    0.11469233705114112
+   ]
+  },
+  "deepseek_numbered_minus_jev": {
+   "point": 0.056829685405013874,
+   "ci95": [
+    0.01610767106683242,
+    0.09596619359577041
+   ]
+  },
+  "identical_repeats": "23/30",
+  "probabilities": {
+   "brier": 0.32827427217310795,
+   "ece": 0.08544563279857467
+  },
+  "latency_ms": {
+   "call_p50": 208.071,
+   "call_p95": 309.534
+  },
+  "cost_per_doc": 0.0002255022
+ },
+ "jev_q17_reference": {
+  "call_p50_ms": 157.202,
+  "call_p95_ms": 470.9772,
+  "cost_per_doc": 0.00023035600000000006,
+  "source": "focused-study speed q17-c1"
+ }
+}
