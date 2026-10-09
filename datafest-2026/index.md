@@ -3,7 +3,7 @@
 Николай Шейко
 
 - Кастомная ИИ разработка: [grably.tech](https://grably.tech)
-- Топовые онлайн конфы по ИИ: [entropy.talk](https://entropy.talk)
+- Онлайн конфы по ИИ: [entropy.talk](https://entropy.talk)
 - Курс по агентам: [aiforwork.courses](https://aiforwork.courses)
 
 Канал: [AI и грабли](https://t.me/ai_grably) — 13.7K подписчиков
