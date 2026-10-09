@@ -417,7 +417,6 @@ ul.list li::before{content:"—";position:absolute;left:0;color:var(--blue);font
 .hd-panel{position:relative;min-height:0}
 .hd-card{position:absolute;inset:0;display:flex;flex-direction:column;gap:14px;padding:26px 28px;border:var(--line);box-shadow:7px 7px 0 var(--blue);opacity:0;transform:translateX(14px);transition:opacity .3s,transform .3s;pointer-events:none}
 .hd-card.on{opacity:1;transform:none;pointer-events:auto}
-.hd-where{font:700 12px/1 'JetBrains Mono',monospace;letter-spacing:.08em;text-transform:uppercase;color:rgba(14,14,13,.55)}
 .hd-name{font-size:32px;font-weight:800;letter-spacing:-.02em}
 .hd-meters{display:grid;grid-template-columns:150px auto;gap:10px 16px;align-items:center;justify-content:start;margin:6px 0 4px;font:600 15px/1 'JetBrains Mono',monospace}
 .hd-dots{display:flex;gap:6px}
@@ -426,6 +425,27 @@ ul.list li::before{content:"—";position:absolute;left:0;color:var(--blue);font
 .hd-pm{display:flex;gap:12px;font-size:19px;font-weight:600;line-height:1.3}
 .hd-pm em{font-style:normal;font-weight:900;color:var(--blue);width:14px;flex:none}
 .hd-pm.minus em{color:var(--ink)}
+.hv{flex:none;height:112px;display:flex;gap:12px;font:600 12px/1.4 'JetBrains Mono',monospace}
+.hv-web{width:200px;flex:none;position:relative;display:flex;flex-direction:column;border:var(--line);background:#fff;overflow:hidden}
+.hv-url{display:flex;align-items:center;gap:4px;height:20px;padding:0 7px;border-bottom:1.5px solid var(--ink);font-size:10px;color:rgba(14,14,13,.6)}
+.hv-url i{width:6px;height:6px;border-radius:50%;background:rgba(14,14,13,.25)}
+.hv-url span{margin-left:6px}
+.hv-pg{flex:1;position:relative;display:flex;flex-direction:column;align-items:flex-start;justify-content:center;gap:7px;padding:0 12px;font-size:11px}
+.hv-pg b{padding:3px 8px;border:1.5px solid var(--ink);font-weight:700}
+.hv-pg u{text-decoration:none;width:130px;padding:2px 6px;border-bottom:1.5px solid rgba(14,14,13,.35);color:rgba(14,14,13,.55)}
+.hv-cur{position:absolute;left:0;top:0;width:16px;height:16px;transform:translate(150px,70px)}
+.hv-log,.hv-term{flex:1;min-width:0;display:flex;flex-direction:column;justify-content:center;gap:2px;white-space:nowrap;overflow:hidden}
+.hv-term{padding:0 14px;border:var(--line);background:#fff}
+.hv-log>span,.hv-term>span{display:block}
+.hv .k{color:var(--blue)}
+.hv .dim{color:rgba(14,14,13,.5)}
+.hv .bad{color:#c4321b}
+.hd-card.on .hv-log>span,.hd-card.on .hv-term>span{animation:hv-in .2s ease backwards}
+@keyframes hv-in{from{opacity:0;transform:translateX(-6px)}}
+.hd-card.on .hv-cur.slow{animation:hv-slow 4.4s cubic-bezier(.5,0,.3,1) both}
+.hd-card.on .hv-cur.fast{animation:hv-fast 1.2s cubic-bezier(.5,0,.3,1) both}
+@keyframes hv-slow{0%{transform:translate(150px,70px)}12%,30%{transform:translate(50px,26px)}42%,62%{transform:translate(100px,50px)}74%,100%{transform:translate(60px,76px)}}
+@keyframes hv-fast{0%{transform:translate(150px,70px)}20%,35%{transform:translate(50px,26px)}50%,65%{transform:translate(100px,50px)}80%,100%{transform:translate(60px,76px)}}
 .hd-case{margin-top:auto;padding:12px 14px;background:var(--ink);color:#fff;font:600 14px/1.4 'JetBrains Mono',monospace}
 
 /* ---------- qr ---------- */
@@ -491,6 +511,8 @@ ul.list li::before{content:"—";position:absolute;left:0;color:var(--blue);font
   .print-page .ans-text{display:inline}
   .print-page .agents-copy-button{display:none}
   .print-page .slide{display:flex !important;position:relative;transform:scale(1.2);transform-origin:top left}
+  .print-page *,.print-page *::before,.print-page *::after{animation:none !important;transition:none !important}
+  .print-page .hv-cur{transform:translate(60px,76px)}
 }
 @page{size:16in 9in;margin:0}
 </style>
@@ -542,7 +564,7 @@ ul.list li::before{content:"—";position:absolute;left:0;color:var(--blue);font
       <svg viewBox="0 25 520 260" aria-hidden="true">
         <circle class="in" cx="24" cy="170" r="7"/>
         <path class="track" d="M24 170H483"/>
-        <g class="station hidden" data-x="104"><rect x="84" y="150" width="40" height="40"/></g><g class="station hidden" data-x="184"><rect x="164" y="150" width="40" height="40"/></g><g class="station hidden" data-x="264"><rect x="244" y="150" width="40" height="40"/></g><g class="station hidden" data-x="344"><path d="M324 158v24a20 7 0 0 0 40 0v-24"/><ellipse cx="344" cy="158" rx="20" ry="7"/></g><g class="station hidden" data-x="424"><rect x="404" y="150" width="40" height="40"/></g>
+        <g class="station" data-x="104"><rect x="84" y="150" width="40" height="40"/></g><g class="station" data-x="184"><rect x="164" y="150" width="40" height="40"/></g><g class="station" data-x="264"><rect x="244" y="150" width="40" height="40"/></g><g class="station" data-x="344"><path d="M324 158v24a20 7 0 0 0 40 0v-24"/><ellipse cx="344" cy="158" rx="20" ry="7"/></g><g class="station" data-x="424"><rect x="404" y="150" width="40" height="40"/></g>
         <g class="out"><rect x="483" y="154" width="26" height="32"/><path d="M489 164h14M489 171h14M489 178h9"/></g>
         <line class="pen" x1="483" y1="100" x2="483" y2="170"/>
         <g class="agent ghost" transform="translate(60 80)"><circle r="20"/><text y="40">агент</text></g>
@@ -592,32 +614,32 @@ ul.list li::before{content:"—";position:absolute;left:0;color:var(--blue);font
     </div>
     <div class="hd-panel">
       <div class="hd-card on">
-        <span class="hd-where">фронтенд · браузер · как задумано</span>
         <b class="hd-name">агент-пользователь</b>
         <div class="hd-meters"><span>скорость</span><span class="hd-dots"><i class="on"></i><i class=""></i><i class=""></i></span><span>дёшево</span><span class="hd-dots"><i class="on"></i><i class=""></i><i class=""></i></span><span>устойчивость</span><span class="hd-dots"><i class="on"></i><i class="on"></i><i class="on"></i></span><span>без бана</span><span class="hd-dots"><i class="on"></i><i class="on"></i><i class=""></i></span></div>
         <p class="hd-pm"><em>+</em>не нужны токены и настройка, переживает редизайн</p>
         <p class="hd-pm minus"><em>−</em>медленно и жрёт токены</p>
+        <div class="hv"><div class="hv-web"><div class="hv-url"><i></i><i></i><i></i><span>mail.google.com</span></div><div class="hv-pg"><b>Написать</b><u>кому: anna@…</u><b>Отправить</b><svg class="hv-cur slow" viewBox="0 0 16 16"><path d="M1 1l5.5 14 2-6 6-2z" fill="#0e0e0d" stroke="#fff" stroke-width="1.2"/></svg></div></div><div class="hv-log"><span style="animation-delay:0.30s"><span class="dim">🤔 где «Написать»?</span></span><span style="animation-delay:1.00s"><span class="k">→ клик</span></span><span style="animation-delay:1.70s"><span class="dim">🤔 где поле «кому»?</span></span><span style="animation-delay:2.40s"><span class="k">→ ввожу адрес</span></span><span style="animation-delay:3.10s"><span class="dim">🤔 где «Отправить»?</span></span><span style="animation-delay:3.80s"><span class="k">→ клик ✓</span></span></div></div>
         <p class="hd-case">ЭЦП в Точке: в API подписи нет, в браузере её подтягивает расширение</p>
       </div><div class="hd-card">
-        <span class="hd-where">бэкенд · API · как задумано</span>
         <b class="hd-name">официальный API</b>
         <div class="hd-meters"><span>скорость</span><span class="hd-dots"><i class="on"></i><i class="on"></i><i class="on"></i></span><span>дёшево</span><span class="hd-dots"><i class="on"></i><i class="on"></i><i class=""></i></span><span>устойчивость</span><span class="hd-dots"><i class="on"></i><i class="on"></i><i class="on"></i></span><span>без бана</span><span class="hd-dots"><i class="on"></i><i class="on"></i><i class="on"></i></span></div>
         <p class="hd-pm"><em>+</em>быстро, стабильно, легально</p>
         <p class="hd-pm minus"><em>−</em>бывает очень дорого, нужных методов может не быть</p>
+        <div class="hv"><div class="hv-term"><span style="animation-delay:0.30s"><span class="dim"># MCP / API: документированный контракт</span></span><span style="animation-delay:0.75s">&gt; <span class="k">gmail.send_message</span>(to, subject, body)</span><span style="animation-delay:1.20s">&nbsp;</span><span style="animation-delay:1.65s">&lt; {"status": <span class="k">"sent"</span>} ✓</span></div></div>
         <p class="hd-case">gh, Google Calendar MCP</p>
       </div><div class="hd-card">
-        <span class="hd-where">фронтенд · браузер · в обход</span>
         <b class="hd-name">скрипт по селекторам</b>
         <div class="hd-meters"><span>скорость</span><span class="hd-dots"><i class="on"></i><i class="on"></i><i class=""></i></span><span>дёшево</span><span class="hd-dots"><i class="on"></i><i class="on"></i><i class="on"></i></span><span>устойчивость</span><span class="hd-dots"><i class="on"></i><i class=""></i><i class=""></i></span><span>без бана</span><span class="hd-dots"><i class="on"></i><i class=""></i><i class=""></i></span></div>
         <p class="hd-pm"><em>+</em>быстро и без LLM на каждом шаге</p>
         <p class="hd-pm minus"><em>−</em>самый хрупкий: падает от любого редизайна</p>
+        <div class="hv"><div class="hv-web"><div class="hv-url"><i></i><i></i><i></i><span>mail.google.com</span></div><div class="hv-pg"><b>Написать</b><u>кому: anna@…</u><b>Отправить</b><svg class="hv-cur fast" viewBox="0 0 16 16"><path d="M1 1l5.5 14 2-6 6-2z" fill="#0e0e0d" stroke="#fff" stroke-width="1.2"/></svg></div></div><div class="hv-log"><span style="animation-delay:0.30s">click('[data-testid=compose]') <span class="k">✓</span></span><span style="animation-delay:0.55s">fill('input[name=to]') <span class="k">✓</span></span><span style="animation-delay:0.80s">click('[data-testid=send]') <span class="k">✓</span></span><span style="animation-delay:1.05s">&nbsp;</span><span style="animation-delay:1.30s"><span class="dim"># после редизайна:</span></span><span style="animation-delay:1.55s"><span class="bad">✗ compose: not found</span></span></div></div>
         <p class="hd-case">не советую</p>
       </div><div class="hd-card">
-        <span class="hd-where">бэкенд · API · в обход</span>
         <b class="hd-name">неофициальный API</b>
         <div class="hd-meters"><span>скорость</span><span class="hd-dots"><i class="on"></i><i class="on"></i><i class="on"></i></span><span>дёшево</span><span class="hd-dots"><i class="on"></i><i class="on"></i><i class="on"></i></span><span>устойчивость</span><span class="hd-dots"><i class="on"></i><i class="on"></i><i class=""></i></span><span>без бана</span><span class="hd-dots"><i class="on"></i><i class=""></i><i class=""></i></span></div>
         <p class="hd-pm"><em>+</em>быстро, дёшево, умеет всё, что умеет клиент</p>
         <p class="hd-pm minus"><em>−</em>серая зона: таймауты, риск бана</p>
+        <div class="hv"><div class="hv-term"><span style="animation-delay:0.30s"><span class="dim"># внутренний endpoint web-клиента</span></span><span style="animation-delay:0.75s">&gt; <span class="k">POST</span> mail.google.com/_/gmail/send</span><span style="animation-delay:1.20s">&nbsp;&nbsp;Cookie: SID=eyJ0eXAi…</span><span style="animation-delay:1.65s">&lt; 200 <span class="k">SEND_OK</span> ✓ <span class="bad">⚠ ToS</span></span></div></div>
         <p class="hd-case">ЛК $30 vs API $2000/мес — куки обновляют сами скрипты</p>
       </div>
     </div>
@@ -998,8 +1020,8 @@ TS</pre>
   var step = 0;
   var steppers = new Map();
 
-  window.deckSteps = function(sec, n, apply){
-    var rec = { n: n, apply: apply, cur: 0 };
+  window.deckSteps = function(sec, n, apply, final){
+    var rec = { n: n, apply: apply, final: final, cur: 0 };
     steppers.set(sec, rec);
     return {
       go: function(i){ if(slides[current]===sec) setStep(i, true); },
@@ -1156,22 +1178,29 @@ TS</pre>
   window.addEventListener('resize', fit);
   window.addEventListener('orientationchange', fit);
 
-  var printRoot = document.getElementById('print-root');
-  slides.forEach(function(s){
-    var page = document.createElement('div');
-    page.className = 'print-page';
-    var clone = s.cloneNode(true);
-    clone.classList.remove('active');
-    clone.appendChild(document.querySelector('#deck > .qr').cloneNode(true));
-    page.appendChild(clone);
-    printRoot.appendChild(page);
-  });
+  function buildPrint(){
+    var printRoot = document.getElementById('print-root');
+    var qr = document.querySelector('#deck > .qr');
+    slides.forEach(function(s){
+      var rec = steppers.get(s);
+      for(var i=0; i<(rec ? rec.n : 1); i++){
+        if(rec) rec.apply(i);
+        var clone = s.cloneNode(true);
+        if(rec && rec.final) rec.final(clone, i);
+        clone.appendChild(qr.cloneNode(true));
+        var page = document.createElement('div');
+        page.className = 'print-page';
+        page.appendChild(clone);
+        printRoot.appendChild(page);
+      }
+    });
+  }
 
   ['400','500','600','700','800','900'].forEach(function(w){ document.fonts.load(w+" 16px Inter", "Яя Aa"); });
   ['400','500','700'].forEach(function(w){ document.fonts.load(w+" 16px 'JetBrains Mono'", "Яя Aa"); });
 
   fit();
-  document.addEventListener('DOMContentLoaded', showHash);
+  document.addEventListener('DOMContentLoaded', function(){ buildPrint(); showHash(); });
 })();
 </script>
 <script>
@@ -1279,8 +1308,8 @@ TS</pre>
 (function(){
   function wait(ms){ return new Promise(function(r){ setTimeout(r,ms); }); }
   function byClass(root, sel){ return Array.prototype.slice.call(root.querySelectorAll(sel)); }
-  function phased(sec, n, onPhase){
-    return deckSteps(sec, n, function(i){ sec.dataset.phase = i; onPhase(i); });
+  function phased(sec, n, onPhase, final){
+    return deckSteps(sec, n, function(i){ sec.dataset.phase = i; onPhase(i); }, final);
   }
   function picker(sec, itemSel, panelSel){
     var items = byClass(sec, itemSel), panels = byClass(sec, panelSel);
@@ -1316,7 +1345,9 @@ TS</pre>
       await wait(3500);
     }
   }
-  phased(rv, 2, function(i){ var g = ++rvGen; if(i===1) rvRun(g); });
+  phased(rv, 2, function(i){ var g = ++rvGen; if(i===1) rvRun(g); }, function(clone, i){
+    if(i===1) byClass(clone, '.rv-log[data-ph="12"] .rv-row').forEach(function(r){ r.classList.add('show-to','show-from','judged'); });
+  });
 
   // Foreman
   var fm = document.querySelector('#deck > .s-foreman');
@@ -1333,34 +1364,44 @@ TS</pre>
     b.used += w;
   }
   function clear(b){ b.fill.innerHTML = ''; b.used = 0; b.n = 0; b.count.textContent = '0'; }
+  var sizes = [3,5,2,6,4,7,3,5,8,2,4,6];
+  function* fmTicks(B, W){
+    clear(B); clear(W);
+    push(B, 9);
+    yield 600;
+    var k = 0;
+    while(W.n < 4){
+      var w = sizes[k++ % sizes.length];
+      if(W.used + w > 100){
+        W.box.classList.add('flash'); yield 700;
+        W.fill.innerHTML = ''; W.used = 0;
+        push(W, 10, 'sum');
+        W.box.classList.remove('flash');
+        W.count.textContent = ++W.n;
+        push(B, 5);
+        yield 500;
+        continue;
+      }
+      push(W, w);
+      yield 140;
+    }
+  }
   async function fmRun(g){
     function alive(){ return g===fmGen && fm.classList.contains('active'); }
     var B = bar(boss), W = bar(worker);
-    var sizes = [3,5,2,6,4,7,3,5,8,2,4,6];
     while(alive()){
-      clear(B); clear(W);
-      push(B, 9);
-      await wait(600);
-      var k = 0;
-      while(alive() && W.n < 4){
-        var w = sizes[k++ % sizes.length];
-        if(W.used + w > 100){
-          W.box.classList.add('flash'); await wait(700);
-          W.fill.innerHTML = ''; W.used = 0;
-          push(W, 10, 'sum');
-          W.box.classList.remove('flash');
-          W.count.textContent = ++W.n;
-          push(B, 5);
-          await wait(500);
-          continue;
-        }
-        push(W, w);
-        await wait(140);
+      for(var ms of fmTicks(B, W)){
+        if(!alive()) return;
+        await wait(ms);
       }
       await wait(4000);
     }
   }
-  phased(fm, 2, function(i){ var g = ++fmGen; if(i===1) fmRun(g); });
+  phased(fm, 2, function(i){ var g = ++fmGen; if(i===1) fmRun(g); }, function(clone, i){
+    if(i!==1) return;
+    var ticks = fmTicks(bar(clone.querySelector('.boss')), bar(clone.querySelector('.worker')));
+    while(!ticks.next().done);
+  });
 
   // Learn
   var lr = document.querySelector('#deck > .s-learn');
