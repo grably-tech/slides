@@ -249,13 +249,14 @@ ul.list li::before{content:"—";position:absolute;left:0;color:var(--blue);font
 .s-harness[data-phase="2"] .hx-stem .dn{border-left-color:var(--blue)}
 .s-harness[data-phase="2"] .hx-stem .dn::before{border-top-color:var(--blue)}
 .s-harness[data-phase="2"] .hx-stem .dn::after{background:var(--blue)}
-.hx-legend{left:170px;top:394px;display:flex;gap:36px;font:600 14px/1 'JetBrains Mono',monospace;color:rgba(14,14,13,.7)}
+.hx-legend{left:170px;top:394px;width:966px;display:flex;justify-content:center;gap:36px;font:600 14px/1 'JetBrains Mono',monospace;color:rgba(14,14,13,.7)}
 .hx-legend span{display:flex;align-items:center;gap:10px}
 .hx-legend b{font:800 22px/1 'Inter',sans-serif}
 .hx-legend .lg-dn{color:var(--ink);transition:color .5s}
 .s-harness[data-phase="2"] .hx-legend .lg-dn{color:var(--blue)}
-.hx-eng{top:300px;height:76px;display:flex;align-items:center;justify-content:center;padding-top:22px;border:2px solid var(--ink);background:var(--ink);color:#fff;font:800 22px/1 'Inter',sans-serif;overflow:hidden}
-.hx-eng .inj{position:absolute;top:0;left:0;right:0;height:24px;background:var(--bg);color:var(--ink);font:600 12px/24px 'JetBrains Mono',monospace;text-align:center;white-space:nowrap;transition:background .5s,color .5s}
+.hx-eng{top:300px;height:76px;display:flex;align-items:center;justify-content:center;padding-top:30px;border:2px solid var(--ink);background:var(--ink);color:#fff;font:800 22px/1 'Inter',sans-serif;overflow:hidden}
+.hx-eng .inj{position:absolute;top:0;left:0;right:0;height:30px;display:flex;align-items:center;justify-content:center;gap:8px;background:var(--bg);color:var(--ink);font:600 12px/1 'JetBrains Mono',monospace;white-space:nowrap;transition:background .5s,color .5s}
+.hx-eng .inj i{font-style:normal;padding:3px 7px;border:1.5px solid var(--ink);background:#fff;font-size:11px}
 .s-harness[data-phase="2"] .hx-eng .inj{background:var(--blue);color:#fff}
 .hx-eng.e1{left:170px;width:380px}.hx-eng.e2{left:756px;width:380px}
 .hx-eng.e3,.hx-eng.e4{left:908px;width:226px;opacity:0}
@@ -379,6 +380,7 @@ ul.list li::before{content:"—";position:absolute;left:0;color:var(--blue);font
 .mm-grid img{width:100%;height:100%;object-fit:contain;border:var(--line);background:var(--bg);padding:8px;min-height:0}
 .ill .shot{display:block;max-width:100%;min-height:0;object-fit:contain;object-position:left top;border:var(--line);box-shadow:6px 6px 0 var(--blue)}
 .ill .shot:not(.pw-hero){flex:1}
+.pw-post{align-self:flex-start;margin-top:4px;font:600 15px/1.2 'JetBrains Mono',monospace}
 .pw{display:flex;align-items:stretch;gap:10px;margin-top:16px}
 .pw-node{flex:1;border:var(--line);padding:14px 12px;display:flex;flex-direction:column;gap:6px}
 .pw-node b{font-size:16px;font-weight:800}
@@ -633,7 +635,7 @@ ul.list li::before{content:"—";position:absolute;left:0;color:var(--blue);font
     <li><span class="qt">Анализ рынка или лидген через парсинг hh.ru/vacancies/id:</span> <button class="ans" type="button" aria-expanded="false"><span class="ans-hint">ответ</span><span class="ans-text">неофициальный парсинг публичной страницы (нужно соблюдать таймауты)</span></button></li>
     <li><span class="qt">Парсинг ютуба через yt-dlp:</span> <button class="ans" type="button" aria-expanded="false"><span class="ans-hint">ответ</span><span class="ans-text">неофициальный через cli (и браузерные куки)</span></button></li>
     <li><span class="qt">Автоотклики на линкедине:</span> <button class="ans" type="button" aria-expanded="false"><span class="ans-hint">ответ</span><span class="ans-text">неофициальный через браузер</span></button></li>
-    <li><span class="qt">Парсинг телеграм каналов через личный профиль:</span> <button class="ans" type="button" aria-expanded="false"><span class="ans-hint">ответ</span><span class="ans-text">неофициальный через браузер или полу-официальный через UserBot</span></button></li>
+    <li><span class="qt">Парсинг телеграм чатов через личный профиль:</span> <button class="ans" type="button" aria-expanded="false"><span class="ans-hint">ответ</span><span class="ans-text">неофициальный через браузер или полу-официальный через UserBot</span></button></li>
   </ol>
 </section>
 
@@ -647,7 +649,7 @@ ul.list li::before{content:"—";position:absolute;left:0;color:var(--blue);font
     <div class="hx-client k1"><b>Codex CLI</b><span>терминал</span></div><div class="hx-client k2"><b>Codex Desktop</b><span>треды · automations · браузер</span></div><div class="hx-client k3"><b>VS Code extension</b><span>чат в редакторе</span></div>
     <div class="hx-bar"><b>bb</b><div class="hx-bar-row"><span>треды</span><span>автоматизации</span><span>браузер</span><span>скиллы</span><span class="hl">плагины</span></div></div>
     <span class="hx-stem s1"><i class="dn"></i><i class="up"></i></span><span class="hx-stem s2"><i class="dn"></i><i class="up"></i></span><span class="hx-stem s3"><i class="dn"></i><i class="up"></i></span><span class="hx-stem s4"><i class="dn"></i><i class="up"></i></span>
-    <div class="hx-eng e1"><span class="inj">+ тулы · скиллы</span><span data-ph="0">Codex App Server</span><span data-ph="12">Codex</span></div><div class="hx-eng e2"><span class="inj">+ тулы · скиллы</span>Claude Code</div><div class="hx-eng e3"><span class="inj">+ тулы · скиллы</span>Pi</div><div class="hx-eng e4"><span class="inj">+ тулы · скиллы</span>OpenCode</div>
+    <div class="hx-eng e1"><span class="inj"><span data-ph="12">+ тулы · скиллы</span><b data-ph="0">+</b><i data-ph="0">developerInstructions</i><i data-ph="0">create_thread</i><i data-ph="0">read_thread_terminal</i><i data-ph="0">automation_update</i><i data-ph="0">skill: in-app browser</i><i data-ph="0">открытые файлы IDE</i></span><span data-ph="0">Codex App Server</span><span data-ph="12">Codex</span></div><div class="hx-eng e2"><span class="inj">+ тулы · скиллы</span>Claude Code</div><div class="hx-eng e3"><span class="inj">+ тулы · скиллы</span>Pi</div><div class="hx-eng e4"><span class="inj">+ тулы · скиллы</span>OpenCode</div>
     <div class="hx-legend"><span><b class="lg-dn">↓</b>тулы, скиллы, контекст — в ядро</span><span><b class="lg-up">⇡</b>ядро вызывает функции оболочки</span></div>
   </div>
 </section>
@@ -939,6 +941,7 @@ TS</pre>
       </div>
       <div class="ill">
         <img class="shot pw-hero" src="./assets/playwriter-hero.jpg" alt="playwriter.dev">
+        <a class="lnk pw-post" href="https://t.me/oestick/573" target="_blank" rel="noopener noreferrer">сравнение с официалами на моем бенче ↗</a>
         <div class="pw">
           <div class="pw-node"><b>твой Chrome</b><span>логины · куки · расширения</span></div>
           <span class="pw-arr">⇄</span>
@@ -992,28 +995,79 @@ TS</pre>
   var swipeHint = document.getElementById('swipe-hint');
   var swipeHintTimer = 0;
 
-  function parseHash(){
-    var m = location.hash.match(/slide=(\d+)/);
-    if(m){
-      var n = parseInt(m[1],10);
-      if(n>=1 && n<=total) return n-1;
-    }
-    return 0;
+  var step = 0;
+  var steppers = new Map();
+
+  window.deckSteps = function(sec, n, apply){
+    var rec = { n: n, apply: apply, cur: 0 };
+    steppers.set(sec, rec);
+    return {
+      go: function(i){ if(slides[current]===sec) setStep(i, true); },
+      get: function(){ return rec.cur; }
+    };
+  };
+
+  function stepsOf(i){
+    var rec = steppers.get(slides[i]);
+    return rec ? rec.n : 1;
   }
 
-  function show(i){
+  function parseHash(){
+    var m = location.hash.match(/slide=(\d+)(?:\.(\d+))?/);
+    if(!m) return { slide: 0, step: 0 };
+    var n = parseInt(m[1],10);
+    if(n<1 || n>total) return { slide: 0, step: 0 };
+    return { slide: n-1, step: m[2] ? parseInt(m[2],10)-1 : 0 };
+  }
+
+  function writeHash(){
+    var h = '#slide='+(current+1)+(stepsOf(current)>1 ? '.'+(step+1) : '');
+    if(location.hash !== h) history.replaceState(null,'',h);
+  }
+
+  function applyStep(animate){
+    var sec = slides[current];
+    var rec = steppers.get(sec);
+    if(!rec) return;
+    if(!animate) sec.classList.add('ph-instant');
+    rec.cur = step;
+    rec.apply(step);
+    if(!animate){
+      void sec.offsetWidth;
+      requestAnimationFrame(function(){ sec.classList.remove('ph-instant'); });
+    }
+  }
+
+  function show(i, st){
     current = Math.max(0, Math.min(total-1, i));
+    step = Math.max(0, Math.min(stepsOf(current)-1, st || 0));
     slides.forEach(function(s,idx){ s.classList.toggle('active', idx===current); });
+    applyStep(false);
     slides[current].dispatchEvent(new CustomEvent('slideenter'));
     document.getElementById('counter').textContent = (current+1)+' / '+total;
     document.getElementById('progress').style.width = ((current+1)/total*100)+'%';
-    if(location.hash !== '#slide='+(current+1)){
-      history.replaceState(null,'','#slide='+(current+1));
-    }
+    writeHash();
   }
 
-  function step(dir){
-    return !slides[current].dispatchEvent(new CustomEvent('slidestep',{cancelable:true,detail:dir}));
+  function setStep(st, animate){
+    step = st;
+    applyStep(animate);
+    writeHash();
+  }
+
+  function next(){
+    if(step < stepsOf(current)-1) setStep(step+1, true);
+    else if(current < total-1) show(current+1, 0);
+  }
+
+  function prev(){
+    if(step > 0) setStep(step-1, true);
+    else if(current > 0) show(current-1, stepsOf(current-1)-1);
+  }
+
+  function showHash(){
+    var h = parseHash();
+    show(h.slide, h.step);
   }
 
   function fit(){
@@ -1025,7 +1079,7 @@ TS</pre>
   function onTouchStart(e){ touchStartX = e.touches[0].clientX; }
   function onTouchEnd(e){
     var diff = touchStartX - e.changedTouches[0].clientX;
-    if(Math.abs(diff)>60){ var dir = diff>0?1:-1; if(!step(dir)) show(current+dir); }
+    if(Math.abs(diff)>60){ if(diff>0) next(); else prev(); }
   }
   window.addEventListener('touchstart',onTouchStart,{passive:true});
   window.addEventListener('touchend',onTouchEnd,{passive:true});
@@ -1050,7 +1104,6 @@ TS</pre>
       var open = li.classList.toggle('open');
       btn.setAttribute('aria-expanded', open ? 'true' : 'false');
     });
-    btn.addEventListener('keydown', function(e){ e.stopPropagation(); });
   });
 
   function buildAgentsPrompt(panel){
@@ -1074,7 +1127,6 @@ TS</pre>
   Array.prototype.slice.call(document.querySelectorAll('#deck .agents-copy-button')).forEach(function(btn){
     var panel = btn.closest('.agents-panel');
     var code = panel ? null : btn.closest('.code-box').querySelector('.code');
-    btn.addEventListener('keydown',function(e){ e.stopPropagation(); });
     btn.addEventListener('click',function(){
       navigator.clipboard.writeText(panel ? buildAgentsPrompt(panel) : code.textContent).then(function(){
         btn.textContent = 'Скопировано';
@@ -1093,14 +1145,14 @@ TS</pre>
   document.addEventListener('keydown', function(e){
     switch(e.key){
       case 'ArrowRight': case 'ArrowDown': case ' ': case 'PageDown':
-        e.preventDefault(); if(!step(1)) show(current+1); break;
+        e.preventDefault(); next(); break;
       case 'ArrowLeft': case 'ArrowUp': case 'PageUp':
-        e.preventDefault(); if(!step(-1)) show(current-1); break;
+        e.preventDefault(); prev(); break;
       case 'Home': e.preventDefault(); show(0); break;
       case 'End': e.preventDefault(); show(total-1); break;
     }
   });
-  window.addEventListener('hashchange', function(){ show(parseHash()); });
+  window.addEventListener('hashchange', showHash);
   window.addEventListener('resize', fit);
   window.addEventListener('orientationchange', fit);
 
@@ -1119,7 +1171,7 @@ TS</pre>
   ['400','500','700'].forEach(function(w){ document.fonts.load(w+" 16px 'JetBrains Mono'", "Яя Aa"); });
 
   fit();
-  show(parseHash());
+  document.addEventListener('DOMContentLoaded', showHash);
 })();
 </script>
 <script>
@@ -1221,59 +1273,35 @@ TS</pre>
 
   function start(){ gen++; runLeft(gen); runRight(gen); }
   sec.addEventListener('slideenter', start);
-  if(sec.classList.contains('active')) start();
 })();
 </script>
 <script>
 (function(){
-  function onEnter(sec, fn){
-    sec.addEventListener('slideenter', fn);
-    if(sec.classList.contains('active')) fn();
-  }
   function wait(ms){ return new Promise(function(r){ setTimeout(r,ms); }); }
+  function byClass(root, sel){ return Array.prototype.slice.call(root.querySelectorAll(sel)); }
+  function phased(sec, n, onPhase){
+    return deckSteps(sec, n, function(i){ sec.dataset.phase = i; onPhase(i); });
+  }
+  function picker(sec, itemSel, panelSel){
+    var items = byClass(sec, itemSel), panels = byClass(sec, panelSel);
+    var steps = deckSteps(sec, items.length, function(i){
+      items.forEach(function(el,idx){ el.classList.toggle('on', idx===i); });
+      panels.forEach(function(el,idx){ el.classList.toggle('on', idx===i); });
+    });
+    items.forEach(function(el,idx){
+      el.addEventListener('click', function(e){ if(!e.target.closest('a')) steps.go(idx); });
+    });
+  }
 
   // 4 ways to give an agent hands
-  var hd = document.querySelector('#deck > .s-hands');
-  var hdCells = Array.prototype.slice.call(hd.querySelectorAll('.hd-cell'));
-  var hdCards = Array.prototype.slice.call(hd.querySelectorAll('.hd-card'));
-  var hdCur = 0;
-  function hdPick(i){
-    hdCur = i;
-    hdCells.forEach(function(c,idx){ c.classList.toggle('on', idx===i); });
-    hdCards.forEach(function(c,idx){ c.classList.toggle('on', idx===i); });
-  }
-  hdCells.forEach(function(c,idx){
-    c.addEventListener('click', function(){ hdPick(idx); });
-    c.addEventListener('keydown', function(e){ e.stopPropagation(); });
-  });
-  onEnter(hd, function(){ hdPick(0); });
-  hd.addEventListener('slidestep', function(e){
-    var next = hdCur + e.detail;
-    if(next>=0 && next<hdCells.length){ hdPick(next); e.preventDefault(); }
-  });
+  picker(document.querySelector('#deck > .s-hands'), '.hd-cell', '.hd-card');
 
-  // Codex vs Claude Code -> bb
+  // Codex -> Codex vs Claude Code -> bb
   phased(document.querySelector('#deck > .s-harness'), 3, function(){});
-
-  function phased(sec, n, onPhase){
-    var ph = 0;
-    function set(i){ ph = i; sec.dataset.phase = i; onPhase(i); }
-    sec.addEventListener('slidestep', function(e){
-      var next = ph + e.detail;
-      if(next>=0 && next<n){ set(next); e.preventDefault(); }
-    });
-    onEnter(sec, function(){
-      sec.classList.add('ph-instant');
-      set(0);
-      void sec.offsetWidth;
-      requestAnimationFrame(function(){ sec.classList.remove('ph-instant'); });
-    });
-    return { set: set, get: function(){ return ph; } };
-  }
 
   // Review loop
   var rv = document.querySelector('#deck > .s-review');
-  var rvRows = Array.prototype.slice.call(rv.querySelectorAll('.rv-log[data-ph="12"] .rv-row'));
+  var rvRows = byClass(rv, '.rv-log[data-ph="12"] .rv-row');
   var rvGen = 0;
   async function rvRun(g){
     function alive(){ return g===rvGen && rv.classList.contains('active'); }
@@ -1337,26 +1365,11 @@ TS</pre>
   // Learn
   var lr = document.querySelector('#deck > .s-learn');
   var lrToggle = lr.querySelector('.lr-toggle');
-  var lrPh = phased(lr, 3, function(i){ lrToggle.textContent = i===2 ? 'v2 · eval' : 'улучшить систему ↗'; });
-  lrToggle.addEventListener('click', function(){ lrPh.set(lrPh.get()===2 ? 1 : 2); });
-  lrToggle.addEventListener('keydown', function(e){ e.stopPropagation(); });
+  var lrSteps = phased(lr, 3, function(i){ lrToggle.textContent = i===2 ? 'v2 · eval' : 'улучшить систему ↗'; });
+  lrToggle.addEventListener('click', function(){ lrSteps.go(lrSteps.get()===2 ? 1 : 2); });
 
   // More skills
-  var mo = document.querySelector('#deck > .s-more');
-  var items = Array.prototype.slice.call(mo.querySelectorAll('.mo-list li'));
-  var ills = Array.prototype.slice.call(mo.querySelectorAll('.ill'));
-  var cur = 0;
-  function pick(i){
-    cur = i;
-    items.forEach(function(li,idx){ li.classList.toggle('on', idx===i); });
-    ills.forEach(function(il,idx){ il.classList.toggle('on', idx===i); });
-  }
-  items.forEach(function(li,idx){ li.addEventListener('click', function(e){ if(!e.target.closest('a')) pick(idx); }); });
-  onEnter(mo, function(){ pick(0); });
-  mo.addEventListener('slidestep', function(e){
-    var next = cur + e.detail;
-    if(next>=0 && next<items.length){ pick(next); e.preventDefault(); }
-  });
+  picker(document.querySelector('#deck > .s-more'), '.mo-list li', '.ill');
 })();
 </script>
 </body>
