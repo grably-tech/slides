@@ -1351,19 +1351,32 @@ TS</pre>
   function phased(sec, n, onPhase, final){
     return deckSteps(sec, n, function(i){ sec.dataset.phase = i; onPhase(i); }, final);
   }
-  function picker(sec, itemSel, panelSel){
+  function picker(sec, itemSel, panelSel, onPick){
     var items = byClass(sec, itemSel), panels = byClass(sec, panelSel);
     var steps = deckSteps(sec, items.length, function(i){
       items.forEach(function(el,idx){ el.classList.toggle('on', idx===i); });
       panels.forEach(function(el,idx){ el.classList.toggle('on', idx===i); });
+      if(onPick) onPick(panels[i]);
     });
     items.forEach(function(el,idx){
       el.addEventListener('click', function(e){ if(!e.target.closest('a')) steps.go(idx); });
     });
   }
 
-  // 4 ways to give an agent hands
-  picker(document.querySelector('#deck > .s-hands'), '.hd-cell', '.hd-card');
+  // 4 ways to give an agent hands: replay the card sketch a few seconds after it ends
+  var hands = document.querySelector('#deck > .s-hands');
+  var handsGen = 0;
+  async function handsReplay(card){
+    var g = ++handsGen;
+    for(;;){
+      var anims = card.getAnimations({ subtree: true });
+      await Promise.all(anims.map(function(a){ return a.finished.catch(function(){}); }));
+      await wait(3000);
+      if(g!==handsGen || !hands.classList.contains('active') || !card.classList.contains('on')) return;
+      anims.forEach(function(a){ a.play(); });
+    }
+  }
+  picker(hands, '.hd-cell', '.hd-card', handsReplay);
 
   // Codex -> Codex vs Claude Code -> bb
   phased(document.querySelector('#deck > .s-harness'), 3, function(){});
