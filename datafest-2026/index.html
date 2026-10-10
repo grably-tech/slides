@@ -6,11 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AI-native SDLC. Грабли, на которые почти все наступают</title>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=JetBrains+Mono:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+  <link href="./assets/fonts/fonts.css" rel="stylesheet">
 
-  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <script src="./assets/vendor/tailwindcss-3.4.17.js"></script>
   <script>
     tailwind.config = {
       theme: {
@@ -46,9 +44,9 @@
     };
   </script>
 
-  <script crossorigin src="https://unpkg.com/react@18.3.1/umd/react.production.min.js"></script>
-  <script crossorigin src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js"></script>
-  <script src="https://unpkg.com/@babel/standalone@7.29.7/babel.min.js"></script>
+  <script src="./assets/vendor/react-18.3.1.production.min.js"></script>
+  <script src="./assets/vendor/react-dom-18.3.1.production.min.js"></script>
+  <script src="./assets/vendor/babel-standalone-7.29.7.min.js"></script>
 
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -184,8 +182,6 @@
       color: #d94f32;
     }
 
-    ol.slide-ol-from-5 { counter-reset: step 4; }
-    ol.slide-ol-from-5 > li::before { content: counter(step); }
 
     .speaker-layout {
       width: 100%;
@@ -712,7 +708,9 @@
       () => (
         <TrendSlide active={0} items={['METR: ощущения ускорения 20%, реальность -20%']}>
           <figure className="w-full">
-            <img src="./assets/metr-core-result.png" alt="METR core result" className="w-full max-h-[420px] object-contain rounded-xl" />
+            <a href="https://arxiv.org/pdf/2507.09089" target="_blank" rel="noopener noreferrer" className="contents">
+              <img src="./assets/metr-core-result.png" alt="METR core result" className="w-full max-h-[420px] object-contain rounded-xl" />
+            </a>
             <FigureLink href="https://arxiv.org/pdf/2507.09089">METR, июль 2025</FigureLink>
           </figure>
         </TrendSlide>
@@ -725,7 +723,9 @@
           'SWEPR: ускорение есть и разрыв растет',
         ]}>
           <figure className="w-full">
-            <img src="./assets/swepr-productivity.png" alt="SWEPR productivity" className="w-full max-h-[420px] object-contain rounded-xl" />
+            <a href="https://aiconference.com/wp-content/uploads/2025/09/Yegor-Denisov-Blanch-Will-AI-Replace-Software-Engineers_-.pptx.pdf" target="_blank" rel="noopener noreferrer" className="contents">
+              <img src="./assets/swepr-productivity.png" alt="SWEPR productivity" className="w-full max-h-[420px] object-contain rounded-xl" />
+            </a>
             <FigureLink href="https://aiconference.com/wp-content/uploads/2025/09/Yegor-Denisov-Blanch-Will-AI-Replace-Software-Engineers_-.pptx.pdf">SWEPR / Stanford, август 2025</FigureLink>
           </figure>
         </TrendSlide>
@@ -739,7 +739,9 @@
           'Karpathy: Агенты заработали',
         ]}>
           <figure className="w-full">
-            <img src="./assets/dec-karpaty-twit.png" alt="Karpathy December tweet" className="w-full max-h-[420px] object-contain rounded-xl" />
+            <a href="https://x.com/karpathy/status/2026731645169185220" target="_blank" rel="noopener noreferrer" className="contents">
+              <img src="./assets/dec-karpaty-twit.png" alt="Karpathy December tweet" className="w-full max-h-[420px] object-contain rounded-xl" />
+            </a>
             <FigureLink href="https://x.com/karpathy/status/2026731645169185220">Karpathy про декабрь 2025</FigureLink>
           </figure>
         </TrendSlide>
@@ -754,7 +756,9 @@
           'Boris Tane: SDLC мертв',
         ]}>
           <figure className="w-full">
-            <img src="./assets/sdlc-comparison.png" alt="SDLC before and after AI comparison" className="w-full max-h-[420px] object-contain rounded-xl" />
+            <a href="https://boristane.com/blog/the-software-development-lifecycle-is-dead/" target="_blank" rel="noopener noreferrer" className="contents">
+              <img src="./assets/sdlc-comparison.png" alt="SDLC before and after AI comparison" className="w-full max-h-[420px] object-contain rounded-xl" />
+            </a>
             <FigureLink href="https://boristane.com/blog/the-software-development-lifecycle-is-dead/">Boris Tane: The Software Development Lifecycle is Dead</FigureLink>
           </figure>
         </TrendSlide>
@@ -770,10 +774,48 @@
           'Review - главный bottleneck',
         ]}>
           <figure className="w-full">
-            <img src="./assets/sdlc3.png" alt="SDLC Review Curse" className="w-full max-h-[400px] object-contain rounded-xl" />
+            <a href="https://boristane.com/blog/the-software-development-lifecycle-is-dead/" target="_blank" rel="noopener noreferrer" className="contents">
+              <img src="./assets/sdlc3.png" alt="SDLC Review Curse" className="w-full max-h-[400px] object-contain rounded-xl" />
+            </a>
             <FigureLink href="https://boristane.com/blog/the-software-development-lifecycle-is-dead/">Boris Tane: Review Curse</FigureLink>
           </figure>
         </TrendSlide>
+      ),
+
+      // 8. Распределение времени
+      () => (
+        <Slide contentClassName="flex flex-col items-center text-center">
+          <h2 className="font-display text-5xl font-700 tracking-tight leading-tight mb-14">Распределение времени</h2>
+          <div className="grid grid-cols-3 gap-12 max-w-6xl w-full items-end">
+            {[
+              { title: "До ИИ", bars: [["Plan", 34], ["Dev", 88], ["Verify", 54]] },
+              { title: "С ИИ сейчас", bars: [["Plan", 68], ["Dev", 22], ["Verify", 76]] },
+              { title: "С ИИ завтра", bars: [["Plan", 46], ["Dev", 0], ["Verify", 88]] },
+            ].map((group) => (
+              <div key={group.title} className="flex flex-col items-center">
+                <div className="flex items-end justify-center gap-4 h-[260px] mb-5">
+                  {group.bars.map(([label, height]) => {
+                    const colors = {
+                      Plan: "border-[#2fa85b] bg-[#b8f3c2] text-[#2fa85b]",
+                      Dev: "border-[#2b82c7] bg-[#a8d6fb] text-[#2b82c7]",
+                      Verify: "border-[#d94848] bg-[#ffc2c2] text-[#d94848]",
+                    };
+                    return (
+                      <div key={label} className="flex flex-col items-center gap-3">
+                        <div
+                          className={`w-20 rounded-xl border-2 shadow-[0_12px_24px_rgba(17,24,39,0.08)] ${colors[label]}`}
+                          style={{ height: `${height * 2.6}px` }}
+                        />
+                        <p className={`font-display text-2xl font-700 ${colors[label].split(" ").at(-1)}`}>{label}</p>
+                      </div>
+                    );
+                  })}
+                </div>
+                <p className="font-display text-4xl text-[#111827] leading-none whitespace-nowrap">{group.title}</p>
+              </div>
+            ))}
+          </div>
+        </Slide>
       ),
 
       // 11. Ошибка 1. Работа в синхронном режиме
@@ -851,28 +893,11 @@
         </Slide>
       ),
 
-      // 16. Ошибка 4. Устаревшие инструменты
-      () => (
-        <Slide>
-          <H2>Ошибка 4. Использовать устаревшие инструменты</H2>
-          <div className="max-w-5xl mx-auto w-full">
-            <Panel>
-              <ul className="slide-list space-y-4 font-body text-2xl text-[#111827] leading-relaxed">
-                <li>Используют Cursor</li>
-                <li>Платят за токены</li>
-              </ul>
-            </Panel>
-            <Solution>Codex / Claude Code + подписка за $100+</Solution>
-          </div>
-        </Slide>
-      ),
-
       // 17. Первые попытки
       () => (
         <Slide>
           <H2 wrapperClassName="max-w-5xl">Первые попытки</H2>
           <ul className="slide-list space-y-6 font-body text-2xl text-[#111827] leading-relaxed max-w-5xl mx-auto w-full">
-            <li>Cursor -> Claude Code</li>
             <li>Опросник для команды (для CLAUDE.md)</li>
             <li>Замыкание Feedback Loop (линтер, typescript, тесты, playwright/cdp)</li>
             <li>Участие в синках, корректировка решений команды</li>
@@ -880,12 +905,12 @@
         </Slide>
       ),
 
-      // 18. Ошибка 5. Делать внутренние инструменты внешнему эксперту
+      // 18. Ошибка 4. Делать внутренние инструменты внешнему эксперту
       () => (
         <Slide>
           <div className="mb-9 max-w-5xl mx-auto w-full">
             <p className="font-body text-2xl italic text-muted mb-3">Что могло пойти не так?</p>
-            <h2 className="font-display text-4xl font-700 tracking-tight leading-tight">Ошибка 5. Делать внутренние инструменты внешнему эксперту</h2>
+            <h2 className="font-display text-4xl font-700 tracking-tight leading-tight">Ошибка 4. Делать внутренние инструменты внешнему эксперту</h2>
           </div>
           <div className="space-y-6 max-w-5xl mx-auto w-full">
             <Panel>
@@ -898,12 +923,12 @@
         </Slide>
       ),
 
-      // 19. Ошибка 6. Пытаться пушить сразу всех
+      // 19. Ошибка 5. Пытаться пушить сразу всех
       () => (
         <Slide>
           <div className="mb-9 max-w-5xl mx-auto w-full">
             <p className="font-body text-2xl italic text-muted mb-3">Что могло пойти не так?</p>
-            <h2 className="font-display text-4xl font-700 tracking-tight leading-tight">Ошибка 6. Пытаться пушить сразу всех</h2>
+            <h2 className="font-display text-4xl font-700 tracking-tight leading-tight">Ошибка 5. Пытаться пушить сразу всех</h2>
           </div>
           <div className="space-y-6 max-w-5xl mx-auto w-full">
             <Panel>
@@ -916,12 +941,12 @@
         </Slide>
       ),
 
-      // 20. Ошибка 7. Учить пользоваться ИИ на примере переноса фронта
+      // 20. Ошибка 6. Учить пользоваться ИИ на примере переноса фронта
       () => (
         <Slide>
           <div className="mb-9 max-w-5xl mx-auto w-full">
             <p className="font-body text-2xl italic text-muted mb-3">Что могло пойти не так?</p>
-            <h2 className="font-display text-4xl font-700 tracking-tight leading-tight">Ошибка 7. Учить пользоваться ИИ на примере переноса фронта</h2>
+            <h2 className="font-display text-4xl font-700 tracking-tight leading-tight">Ошибка 6. Учить пользоваться ИИ на примере переноса фронта</h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 max-w-5xl mx-auto w-full items-stretch">
             <Panel className="h-full">
@@ -989,10 +1014,10 @@
         </Slide>
       ),
 
-      // 25. Ошибка 8. Считать не те метрики
+      // 25. Ошибка 7. Считать не те метрики
       () => (
         <Slide>
-          <H2>Ошибка 8. Считать не те метрики</H2>
+          <H2>Ошибка 7. Считать не те метрики</H2>
           <div className="grid grid-cols-3 gap-5 max-w-5xl mx-auto w-full">
             <Panel className="h-full">
               <p className="font-display text-2xl text-accent mb-4">Плохо</p>
@@ -1036,10 +1061,10 @@
         </Slide>
       ),
 
-      // 28. Ошибка 9. Делать ревью вручную
+      // 28. Ошибка 8. Делать ревью вручную
       () => (
         <Slide>
-          <H2>Ошибка 9. Делать ревью вручную</H2>
+          <H2>Ошибка 8. Делать ревью вручную</H2>
           <div className="max-w-5xl mx-auto w-full">
             <Panel>
               <ul className="slide-list space-y-4 font-body text-2xl text-[#111827] leading-relaxed">
@@ -1070,10 +1095,10 @@
         </Slide>
       ),
 
-      // 30. Ошибка 10
+      // 30. Ошибка 9
       () => (
         <Slide>
-          <H2>Ошибка 10. Забивать на лучшие практики разработки</H2>
+          <H2>Ошибка 9. Забивать на лучшие практики разработки</H2>
           <div className="max-w-5xl mx-auto w-full">
             <Panel>
               <p className="font-body text-2xl text-[#111827] leading-relaxed">
@@ -1092,10 +1117,10 @@
         </Slide>
       ),
 
-      // 31. Ошибка 11
+      // 31. Ошибка 10
       () => (
         <Slide>
-          <H2 className="text-4xl">Ошибка 11. Использовать голый grep</H2>
+          <H2 className="text-4xl">Ошибка 10. Использовать голый grep</H2>
           <div className="max-w-5xl mx-auto w-full">
             <Panel className="p-5">
               <p className="font-body text-lg text-[#111827] leading-relaxed">
@@ -1144,10 +1169,10 @@
         </Slide>
       ),
 
-      // 32. Ошибка 12
+      // 32. Ошибка 11
       () => (
         <Slide>
-          <H2 className="!text-4xl">Ошибка 12. Использовать одного исполнителя или мультиагентную систему</H2>
+          <H2 className="!text-4xl">Ошибка 11. Использовать одного исполнителя или мультиагентную систему</H2>
           <div className="max-w-5xl mx-auto w-full">
             <div className="grid grid-cols-2 gap-6">
               <div className="glass rounded-2xl overflow-hidden flex flex-col">
@@ -1249,22 +1274,7 @@
             <h1 className="font-display text-6xl font-800 tracking-tight leading-tight max-w-5xl">
               Что ждём завтра?
             </h1>
-            <p className="font-body text-2xl text-white/52 mt-8 max-w-5xl leading-relaxed">
-              тренды vs хайп
-            </p>
           </div>
-        </Slide>
-      ),
-
-      // 38. Продакт-инженер
-      () => (
-        <Slide>
-          <H2 wrapperClassName="max-w-5xl">Продакт-инженер</H2>
-          <ul className="slide-list space-y-6 font-body text-2xl text-[#111827] leading-relaxed max-w-5xl mx-auto w-full">
-            <li>Быть просто разработчиком уже нельзя</li>
-            <li>Для Plan и Review нужно понимание продукта</li>
-            <li>"Я просто делаю тикеты" теперь может ИИ-агент</li>
-          </ul>
         </Slide>
       ),
 
@@ -1278,7 +1288,7 @@
               <ul className="slide-list space-y-4 font-body text-2xl text-[#111827] leading-snug">
                 <li>Оунит конкретную задачу</li>
                 <li>Планирует, запускает агентов, валидирует результат</li>
-                <li>Отвечает за продуктовый смысл и качество</li>
+                <li>Понимает продукт: без этого нет Plan и Review</li>
               </ul>
             </Panel>
             <Panel className="h-full">
@@ -1290,6 +1300,12 @@
               </ul>
             </Panel>
           </div>
+          <p className="mt-8 max-w-6xl mx-auto w-full font-body text-2xl text-muted leading-snug">
+            «Просто делать тикеты» теперь может агент
+          </p>
+          <p className="mt-3 max-w-6xl mx-auto w-full font-body text-2xl font-600 text-accent">
+            Кто не смог в новый процесс — уходит
+          </p>
         </Slide>
       ),
 
@@ -1306,123 +1322,49 @@
         </Slide>
       ),
 
-      // 44. Итоги: Ошибки разработчика (1-4)
-      () => (
-        <Slide>
-          <H2>Итоги: Ошибки разработчика <span className="text-muted">ч. 1</span></H2>
-          <ol className="slide-ol space-y-5 font-body text-2xl text-[#111827] max-w-5xl mx-auto w-full leading-relaxed">
-            <li className="grid grid-cols-[minmax(0,1.15fr)_minmax(0,1fr)] items-baseline gap-8">
-              <span>Считать себя исполнителем</span>
-              <span className="text-dim">мы теперь менеджеры</span>
-            </li>
-            <li className="grid grid-cols-[minmax(0,1.15fr)_minmax(0,1fr)] items-baseline gap-8">
-              <span>Забивать на SOLID, etc</span>
-              <span className="text-dim">принципы "локализации работы"</span>
-            </li>
-            <li className="grid grid-cols-[minmax(0,1.15fr)_minmax(0,1fr)] items-baseline gap-8">
-              <span>Работать без замкнутого Feedback Loop</span>
-              <span className="text-dim">стат. анализ, тесты, e2e</span>
-            </li>
-            <li className="grid grid-cols-[minmax(0,1.15fr)_minmax(0,1fr)] items-baseline gap-8">
-              <span>Делать кодревью вручную</span>
-              <span className="text-dim">делаем ревью с агентом</span>
-            </li>
-          </ol>
-        </Slide>
-      ),
-
-      // 45. Итоги: Ошибки разработчика (5-8)
-      () => (
-        <Slide>
-          <H2>Итоги: Ошибки разработчика <span className="text-muted">ч. 2</span></H2>
-          <ol className="slide-ol slide-ol-from-5 space-y-5 font-body text-2xl text-[#111827] max-w-5xl mx-auto w-full leading-relaxed">
-            <li className="grid grid-cols-[minmax(0,1.15fr)_minmax(0,1fr)] items-baseline gap-8">
-              <span>Тратить слишком мало времени на планирование</span>
-              <span className="text-dim">10 минут планирования = часы и дни позже</span>
-            </li>
-            <li className="grid grid-cols-[minmax(0,1.15fr)_minmax(0,1fr)] items-baseline gap-8">
-              <span>Тратить слишком много времени на планирование</span>
-              <span className="text-dim">когда не знаем, что хотим – быстрее сделать и выкинуть</span>
-            </li>
-            <li className="grid grid-cols-[minmax(0,1.15fr)_minmax(0,1fr)] items-baseline gap-8">
-              <span>Использовать все фичи</span>
-              <span className="text-dim">AGENTS.md → skills → subagents → specialized agents</span>
-            </li>
-            <li className="grid grid-cols-[minmax(0,1.15fr)_minmax(0,1fr)] items-baseline gap-8">
-              <span>Забивать на эволюцию</span>
-              <span className="text-dim">постепенный онбординг агента через пробы и ошибки</span>
-            </li>
-          </ol>
-        </Slide>
-      ),
-
-      // 46. Итоги: Ошибки компании (1-4)
-      () => (
-        <Slide>
-          <H2>Итоги: Ошибки компании <span className="text-muted">ч. 1</span></H2>
-          <ol className="slide-ol space-y-5 font-body text-2xl text-[#111827] max-w-5xl mx-auto w-full leading-relaxed">
-            <li className="grid grid-cols-[minmax(0,1.15fr)_minmax(0,1fr)] items-baseline gap-8">
-              <span className="whitespace-nowrap">Нанять внешнего настройщика</span>
-              <span className="text-dim">нужен agentic ops из команды<br />+ <i>опционально</i> куратор извне</span>
-            </li>
-            <li className="grid grid-cols-[minmax(0,1.15fr)_minmax(0,1fr)] items-baseline gap-8">
-              <span>Начинать с задач с большой ценой ошибки</span>
-              <span className="text-dim">дашборды, админки, автоматизация</span>
-            </li>
-            <li className="grid grid-cols-[minmax(0,1.15fr)_minmax(0,1fr)] items-baseline gap-8">
-              <span>Использовать устаревшие инструменты</span>
-              <span className="text-dim">codex / claude code</span>
-            </li>
-            <li className="grid grid-cols-[minmax(0,1.15fr)_minmax(0,1fr)] items-baseline gap-8">
-              <span>Пытаться пушить всех сотрудников</span>
-              <span className="text-dim">вам нужна пара энтузиастов на команду</span>
-            </li>
-          </ol>
-        </Slide>
-      ),
-
-      // 47. Итоги: Ошибки компании (5-8)
-      () => (
-        <Slide>
-          <H2>Итоги: Ошибки компании <span className="text-muted">ч. 2</span></H2>
-          <ol className="slide-ol slide-ol-from-5 space-y-5 font-body text-2xl text-[#111827] max-w-5xl mx-auto w-full leading-relaxed">
-            <li className="grid grid-cols-[minmax(0,1.15fr)_minmax(0,1fr)] items-baseline gap-8">
-              <span>Не повышать зп</span>
-              <span className="text-dim">они скоро осознают свою ценность</span>
-            </li>
-            <li className="grid grid-cols-[minmax(0,1.15fr)_minmax(0,1fr)] items-baseline gap-8">
-              <span>Надеяться на быстрый результат</span>
-              <span className="text-dim">для старта – 50+ часов <span className="text-accent">обучения</span></span>
-            </li>
-            <li className="grid grid-cols-[minmax(0,1.15fr)_minmax(0,1fr)] items-baseline gap-8">
-              <span>Нанимать по старому</span>
-              <span className="text-dim">смотреть как используют свой сетап</span>
-            </li>
-            <li className="grid grid-cols-[minmax(0,1.15fr)_minmax(0,1fr)] items-baseline gap-8">
-              <span>Считать метрики типа LOC, commits, PRs</span>
-              <span className="text-dim">поток задач до финала</span>
-            </li>
-          </ol>
-        </Slide>
-      ),
-
-      // 48. Итоги: Чего ждать?
-      () => (
-        <Slide>
-          <H2>Итоги: Чего ждать?</H2>
-          <ul className="slide-list space-y-5 font-body text-3xl text-[#111827] max-w-5xl mx-auto w-full leading-snug">
-            <li>
-              Две роли
-              <ul className="slide-list-sm space-y-2 mt-3 text-2xl">
-                <li>Agentic Engineer <span className="text-dim">(оунит задачки)</span></li>
-                <li>Agentic Operations <span className="text-dim">(оунит SDLC)</span></li>
-              </ul>
-            </li>
-            <li>Увольнение тех, кто не смог в новый процесс</li>
-            <li>ИИ-агенты вне разработки</li>
-          </ul>
-        </Slide>
-      ),
+      // 44. Итоги: все ошибки
+      () => {
+        const columns = [
+          ["разработчик", [
+            [1, "Работать синхронно", "вы теперь менеджер агентов"],
+            [2, "Не замыкать Feedback Loop", "стат. анализ, тесты, e2e — проверяет агент"],
+            [3, "Мало планировать", "10 минут плана = часы и дни позже"],
+            [8, "Ревьюить вручную", "ревью вместе с агентом"],
+            [9, "Забивать на best practices", "локализация работы → меньше контекста"],
+            [10, "Искать голым grep", "ast search"],
+            [11, "Один агент или рой агентов", "прораб + исполнитель"],
+          ]],
+          ["компания", [
+            [4, "Отдать инструменты внешнему эксперту", "agentic ops из команды"],
+            [5, "Пушить сразу всех", "пара энтузиастов на команду"],
+            [6, "Учиться на задаче с высокой ценой ошибки", "дашборды, админки, автоматизация"],
+            [7, "Считать LOC, коммиты, PR", "поток задач до финала"],
+          ]],
+        ];
+        return (
+          <Slide>
+            <H2 wrapperClassName="max-w-6xl">Итоги: 11 ошибок</H2>
+            <div className="grid grid-cols-[minmax(0,1.2fr)_minmax(0,1fr)] gap-12 max-w-6xl mx-auto w-full">
+              {columns.map(([title, items]) => (
+                <div key={title}>
+                  <p className="mb-4 font-mono text-sm uppercase tracking-widest text-dim">{title}</p>
+                  <ol className="space-y-3">
+                    {items.map(([n, error, fix]) => (
+                      <li key={n} className="grid grid-cols-[32px_minmax(0,1fr)] gap-x-2">
+                        <span className="font-mono text-lg font-700 text-accent leading-7">{n}</span>
+                        <span>
+                          <span className="block font-body text-lg font-600 leading-7 text-[#111827]">{error}</span>
+                          <span className="block font-body text-base leading-6 text-dim">→ {fix}</span>
+                        </span>
+                      </li>
+                    ))}
+                  </ol>
+                </div>
+              ))}
+            </div>
+          </Slide>
+        );
+      },
 
       // 49. Итоги: Что делать? Долгосрок
       () => (
@@ -1508,7 +1450,7 @@
 
     ];
 
-    const slidesWithPrintSolutionSteps = new Set([9, 10, 11, 22, 24, 25, 26]);
+    const slidesWithPrintSolutionSteps = new Set([10, 11, 22, 24, 25, 26]);
 
     function getInitialSlide() {
       const p = new URLSearchParams(window.location.search);
