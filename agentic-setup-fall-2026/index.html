@@ -209,10 +209,10 @@ ul.list li::before{content:"—";position:absolute;left:0;color:var(--blue);font
 .duo-foot b{font-weight:800}
 
 /* ---------- stepped slides: shared ---------- */
-.sk-head{display:flex;align-items:center;gap:18px;padding-right:124px}
+.sk-head{display:flex;align-items:center;gap:18px;padding-right:64px}
 .sk-head h2{margin-right:auto}
 .dl{
-  display:inline-flex;align-items:center;gap:8px;padding:10px 14px;background:var(--ink);color:var(--bg);text-decoration:none;
+  display:inline-flex;flex:none;white-space:nowrap;align-items:center;gap:8px;padding:10px 14px;background:var(--ink);color:var(--bg);text-decoration:none;
   font:700 13px/1 'JetBrains Mono',monospace;letter-spacing:.04em;box-shadow:4px 4px 0 var(--blue);
 }
 .dl:hover{background:var(--blue)}
@@ -852,7 +852,10 @@ TS</pre>
 
 <!-- Мои скиллы: Subagent Review Loop -->
 <section class="slide s-review has-ph">
-  <h2>Мои скиллы <span class="accent">|</span> Subagent Review Loop</h2>
+  <div class="sk-head">
+    <h2>Мои скиллы <span class="accent">|</span> Subagent Review Loop</h2>
+    <a class="dl" href="./assets/skills/subagent-review-loop.zip" download><svg viewBox="0 0 16 16" width="14" height="14"><path d="M8 1v9m0 0L4 6m4 4 4-4M2 14h12" fill="none" stroke="currentColor" stroke-width="2"/></svg>review.zip</a>
+  </div>
   <div class="ph-line"><span class="ph-tag" data-ph="0">проблема</span><span class="ph-tag blue" data-ph="12">решение</span><span data-ph="0">Попросишь докопаться — докопается. <b>Даже если не до чего.</b></span><span data-ph="12">Ревью на ревью: <b>что-то принять, что-то оспорить</b></span></div>
   <div class="rv">
     <div class="rv-agent">
