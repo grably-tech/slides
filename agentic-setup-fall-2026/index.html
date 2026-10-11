@@ -48,6 +48,10 @@ body{background:var(--bg);color:var(--ink);font-family:'Inter',sans-serif;overfl
   font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.08em;
   color:var(--ink);opacity:.55;z-index:50;user-select:none;
 }
+#splash{display:none;position:absolute;inset:0;z-index:30}
+#splash img{display:block;width:100%;height:100%}
+body.splash #splash{display:block}
+body.splash #hud,body.splash #progress{visibility:hidden}
 #progress{position:fixed;left:0;bottom:0;height:3px;background:var(--blue);width:0;z-index:50;transition:width .25s ease}
 #swipe-hint{display:none}
 @media screen and (hover:none) and (pointer:coarse){
@@ -548,6 +552,7 @@ ul.list li::before{content:"—";position:absolute;left:0;color:var(--blue);font
   body{overflow:visible;background:var(--bg)}
   #print-root{display:block}
   .print-page{width:16in;height:9in;overflow:hidden;page-break-after:always;break-after:page;background:var(--bg);-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .print-page:last-child{page-break-after:auto;break-after:auto}
   .print-page .ans-hint{display:none}
   .print-page .ans-text{display:inline}
   .print-page .agents-copy-button{display:none}
@@ -1042,6 +1047,7 @@ TS</pre>
 </section>
 
 <a class="qr" href="https://grably.tech/slides/agentic-setup-fall-2026/" target="_blank" rel="noopener noreferrer" aria-label="Эта презентация онлайн"><img src="./assets/qr.png" alt="QR: grably.tech/slides/agentic-setup-fall-2026"></a>
+<div id="splash"><img src="./assets/podlodka-splash.jpg" alt="Podlodka AI Crew · Николай Шейко · Агентный сетап на осень 2026"></div>
 
 </div></div>
 <div id="hud"><span id="counter">1 / 16</span></div>
@@ -1103,7 +1109,11 @@ TS</pre>
     }
   }
 
+  var splashOnLoad = !/slide=/.test(location.hash);
+  function setSplash(on){ document.body.classList.toggle('splash', on); }
+
   function show(i, st){
+    setSplash(false);
     current = Math.max(0, Math.min(total-1, i));
     step = Math.max(0, Math.min(stepsOf(current)-1, st || 0));
     slides.forEach(function(s,idx){ s.classList.toggle('active', idx===current); });
@@ -1121,13 +1131,15 @@ TS</pre>
   }
 
   function next(){
-    if(step < stepsOf(current)-1) setStep(step+1, true);
+    if(document.body.classList.contains('splash')) setSplash(false);
+    else if(step < stepsOf(current)-1) setStep(step+1, true);
     else if(current < total-1) show(current+1, 0);
   }
 
   function prev(){
     if(step > 0) setStep(step-1, true);
     else if(current > 0) show(current-1, stepsOf(current-1)-1);
+    else setSplash(true);
   }
 
   function showHash(){
@@ -1243,7 +1255,8 @@ TS</pre>
   ['400','500','700'].forEach(function(w){ document.fonts.load(w+" 16px 'JetBrains Mono'", "Яя Aa"); });
 
   fit();
-  document.addEventListener('DOMContentLoaded', function(){ buildPrint(); showHash(); });
+  setSplash(splashOnLoad);
+  document.addEventListener('DOMContentLoaded', function(){ buildPrint(); showHash(); setSplash(splashOnLoad); });
 })();
 </script>
 <script>
